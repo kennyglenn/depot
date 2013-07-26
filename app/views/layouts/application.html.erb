@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="wrapper">
+      
+    <!-- header -->
+    <header>
+      <%= image_tag("logo.png") %>
+      <%= @page_title || "Book shelf" %>
+    </header>
+    
+    <!-- content -->
+    <div class="content">
+      <%= render "shared/sidebar" %>
+      <%= yield %>
+    </div>
+    
+  </div>
 </body>
 </html>
