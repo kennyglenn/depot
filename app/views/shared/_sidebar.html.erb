@@ -5,6 +5,9 @@
     <li><a href="http://www..../news" >News</a></li>
     <li><a href="http://www..../contact" >Contact</a></li>  
   </ul>
-  
-  <%= render @cart %>
+	<% if @cart %>
+		<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+			<%= render @cart %>
+		<% end %>
+	<% end %>
 </aside>
